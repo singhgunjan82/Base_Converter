@@ -1,0 +1,135 @@
+<!-- <!-- Q1. how to convert string to dicimal
+ 1. Parsent (string  Base)
+ Q2. How to convert Dasimal number system to any number system number. to string (based) 
+-->
+<!-- 
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Document</title>
+</head>
+
+<body>
+  <p> Base Conversion</p>
+  number:<input type="text" id="de"> <br><br>
+  from:
+  <select id="from">
+    <option value="d">Decimal Number</option>
+    <option value="b">Binary Number</option>
+    <option value="o">Octial Number</option>
+    <option value="h">HexaDecimal Number</option>
+
+  </select>
+  To:
+  <select id="to">
+    <option value="d">Decimal Number</option>
+    <option value="b">Binary Number</option>
+    <option value="o">Octial Number</option>
+    <option value="h">HexaDecimal Number</option>
+  </select>
+
+  <button type="button" onclick="cov()">Convrt</button>
+  result:<input type="text" id="res"><br><br>
+  <script>
+    function cov() {
+      let num = document.getElementById("d1").value.trim()
+      let userfromipt = document.getElementById("from").value
+      let usertoipt = document.getElementById("to").value
+      alert("frominput=" + userfromipt)
+      alert("toinput=" + usertoipt)
+    }
+
+      
+
+
+
+  </script>
+
+
+</body>
+
+</html> -->
+
+
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Base Converter</title>
+  </head>
+  <body>
+    <p>Base Conversion</p>
+
+    number:
+    <input type="text" id="de"> <br><br>
+
+    From:
+    <select id="from">
+      <option value="d">Decimal Number</option>
+      <option value="b">Binary Number</option>
+      <option value="o">Octal Number</option>
+      <option value="h">HexaDecimal Number</option>
+    </select>
+
+    To:
+    <select id="to">
+      <option value="d">Decimal Number</option>
+      <option value="b">Binary Number</option>
+      <option value="o">Octal Number</option>
+      <option value="h">HexaDecimal Number</option>
+    </select>
+    
+    <button type="button" onclick="cov()">Convert</button>
+    
+    <br><br>
+    result:
+    <input type="text" id="res"><br><br>
+
+    <script>
+      function cov(){
+        let num = document.getElementById("de").value.trim();
+        let fromBase = document.getElementById("from").value;
+        let toBase = document.getElementById("to").value;
+
+        // Convert input number to decimal
+        let decimalNumber;
+
+        if(fromBase === "d"){
+          decimalNumber = parseInt(num, 10);
+        }
+        else if(fromBase === "b"){
+          decimalNumber = parseInt(num, 2);
+        }
+        else if(fromBase === "o"){
+          decimalNumber = parseInt(num, 8);
+        }
+        else if(fromBase === "h"){
+          decimalNumber = parseInt(num, 16);
+        }
+
+        // Now convert decimal to desired output
+        let result;
+
+        if(toBase === "d"){
+          result = decimalNumber.toString(10);
+        }
+        else if(toBase === "b"){
+          result = decimalNumber.toString(2);
+        }
+        else if(toBase === "o"){
+          result = decimalNumber.toString(8);
+        }
+        else if(toBase === "h"){
+          result = decimalNumber.toString(16).toUpperCase();
+        }
+
+        document.getElementById("res").value = result;
+      }
+      
+    </script>
+  </body>
+</html>
